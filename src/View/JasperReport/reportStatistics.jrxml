@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc88a001-9c0c-4f67-a01d-f120ff863ff3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toDate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+      COUNT(BillID) as 'Quantity' ,sum(billprice) as'Price'
+FROM
+     "dbo"."Bill" Bill where Bill."Date" between $P{fromDate} and $P{toDate}]]>
+	</queryString>
+	<field name="Quantity" class="java.lang.Integer"/>
+	<field name="Price" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="105" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="66" backcolor="#4A1F3D" uuid="c6d04060-7fed-42d1-97c1-cb698dfaaa19"/>
+				<staticText>
+					<reportElement x="0" y="0" width="370" height="41" forecolor="#FFFFFF" uuid="aac9fe1c-97ae-4617-b5b2-fca5ac6ac793"/>
+					<textElement>
+						<font fontName="Times New Roman" size="30" isBold="false"/>
+					</textElement>
+					<text><![CDATA[K&Technology]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="213" y="41" width="238" height="24" forecolor="#CCCCCC" backcolor="#808080" uuid="38b9f23b-21f7-48ea-834c-ea200ccc5a19"/>
+					<textElement>
+						<font fontName="Times New Roman" size="20" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Bill Of Statistics]]></text>
+				</staticText>
+			</frame>
+			<image scaleImage="RealSize">
+				<reportElement x="456" y="0" width="99" height="99" backcolor="#FFFFFF" uuid="b93734d4-4ce8-4ff5-b2c0-09e15d61e903"/>
+				<imageExpression><![CDATA["H:\\Project\\ProjectJavaSem2\\K&Technology\\src\\Images\\technologylogologin - Copy.png"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="65" width="451" height="33" forecolor="#000000" backcolor="#BA4F54" uuid="3e30a9c3-0201-4f7e-b2c9-5fd33714b8a4"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="d2702047-cfea-4d1c-9b52-ef910bb59dd9"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" forecolor="#000000" uuid="37d30b81-379b-42a1-9f8d-aa9e698792e9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                                    BIll]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="47" width="555" height="2" uuid="ac4d211c-9ba5-43a1-aa0a-d54f8490c68d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="147" height="20" forecolor="#000000" uuid="3571a404-3b9f-4852-be20-0f460401cbf1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="10" width="172" height="20" forecolor="#000000" uuid="3024ae3d-c15b-44b9-b80c-221341fec504"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="10" width="132" height="20" forecolor="#000000" uuid="22b2fec4-018b-41c2-831a-0f7240b4c8d2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QuantityBill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="10" width="104" height="20" forecolor="#000000" uuid="103ff347-8837-4ec9-a1e4-3509b8db190c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="45" width="555" height="2" uuid="ed09bfde-d6bf-43cf-8e40-a1448500f216"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement positionType="Float" x="0" y="0" width="147" height="18" uuid="8fe945bb-ec45-48a5-ab52-249b3d1f40ce"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement positionType="Float" x="147" y="0" width="171" height="18" uuid="d345ca61-7c9d-4ae2-b013-7600cd9d2ac7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="318" y="0" width="133" height="18" uuid="7c1ec853-e6d6-49a7-97f5-3e26fefd26c1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0">
+				<reportElement positionType="Float" x="451" y="0" width="104" height="18" uuid="6d3b4c51-66c1-426f-99cc-b9a6c08fdf0f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
